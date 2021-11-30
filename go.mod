@@ -1,4 +1,4 @@
-module github.com/khorasany/ICoffee-microservice/components
+module github.com/khorasany/ICoffee-components
 
 go 1.16
 
