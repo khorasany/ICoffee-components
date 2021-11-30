@@ -3,6 +3,7 @@ package jwtToken
 import (
 	"fmt"
 	"github.com/dgrijalva/jwt-go"
+	"go.mongodb.org/mongo-driver/bson/primitive"
 	"time"
 )
 
@@ -14,6 +15,11 @@ type Claims struct {
 	BirthDate string `json:"birthdate"`
 	Role      string `json:"role"`
 	jwt.StandardClaims
+}
+
+type JwtToken struct {
+	TokenID primitive.ObjectID `json:"token_id,omitempty" bson:"_id,omitempty"`
+	Token   string             `json:"jwt_token,omitempty"`
 }
 
 var jwtKey = []byte("iCoffeeProject")
