@@ -28,3 +28,10 @@ func (e *RestErr) NewStatusInternalServerError(message string) *RestErr {
 	e.Error = "internal_server_error"
 	return e
 }
+
+func (e *RestErr) NewStatusMethodNotAllowed(message string) *RestErr {
+	e.Message = message
+	e.Status = http.StatusMethodNotAllowed
+	e.Error = "method_not_allowed"
+	return e
+}
