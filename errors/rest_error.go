@@ -21,3 +21,10 @@ func (e *RestErr) NewStatusNoContent(message string) *RestErr {
 	e.Error = "empty_content"
 	return e
 }
+
+func (e *RestErr) NewStatusInternalServerError(message string) *RestErr {
+	e.Message = message
+	e.Status = http.StatusInternalServerError
+	e.Error = "internal_server_error"
+	return e
+}
